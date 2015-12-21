@@ -1,11 +1,16 @@
-# ezapiyelp
+# ezapi_yelp
+[![PyPI](https://img.shields.io/pypi/dm/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp) [![PyPI](https://img.shields.io/pypi/v/ezapi_yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
 
 An easy api for Yelp written in Python
 
 It implements the "search", "business", and "phone_search" api provided by Yelp. For details, see https://www.yelp.com/developers/documentation/v2/overview
 
-# Usage
+# Install
+```bash
+pip install ezapi_yelp
+```
 
+# Usage
 ```python
 from ezapi_yelp import EZapiYelp
 

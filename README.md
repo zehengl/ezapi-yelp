@@ -1,5 +1,5 @@
 # ezapi_yelp
-[![Build Status](https://travis-ci.org/zehengl/ezapi_yelp.svg?branch=master)](https://travis-ci.org/zehengl/ezapi_yelp)[![PyPI](https://img.shields.io/pypi/dm/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp) [![PyPI](https://img.shields.io/pypi/v/ezapi_yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
+[![Build Status](https://travis-ci.org/zehengl/ezapi_yelp.svg?branch=master)](https://travis-ci.org/zehengl/ezapi_yelp) [![PyPI](https://img.shields.io/pypi/dm/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp) [![PyPI](https://img.shields.io/pypi/v/ezapi_yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
 
 An easy api for Yelp written in Python
 

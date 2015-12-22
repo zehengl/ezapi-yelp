@@ -8,4 +8,4 @@ python:
 install:
   - pip install requests_oauthlib
 script:
-  - python setup sdist
+  - python setup.py sdist

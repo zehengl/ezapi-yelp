@@ -24,7 +24,11 @@ class EZapiYelp:
             'category_filter': str,
             'radius_filter': int,
             'deals_filter': bool,
+            'actionlinks': bool,
             'location': str,
+            'cll': str,
+            'bounds': str,
+            'll': str,
         }
 
         # business api type constraints
@@ -59,9 +63,45 @@ class EZapiYelp:
                 pass
 
     def get_search_params(self, **kwargs):
-        if 'location' not in kwargs:
-            mssg = 'Yelp V2 api| required parameter: location'
+        if 'bounds' in kwargs:
+            try:
+                items = kwargs['bounds'].split('|')
+                [sw_lat, sw_long] = items[0].split(',')
+                [ne_lat, ne_long] = items[1].split(',')
+                sw_lat = float(sw_lat)
+                sw_long = float(sw_long)
+                ne_lat = float(ne_lat)
+                ne_long = float(ne_long)
+            except:
+                mssg = 'Yelp V2 api| parameter: bounds should be "sw_lat,sw_long|ne_lat, ne_long"'
+        if 'll' in kwargs:
+            values = kwargs['ll'].split(',')
+            if len(values) < 2 or len(values) > 5:
+                mssg = 'Yelp V2 api| parameter: ll should at least contain a set of 2 items'
+                raise EZapiYelp.EZerror(mssg)
+            else:
+                try:
+                    for v in values:
+                        v = float(v)
+                except:
+                    mssg = 'Yelp V2 api| parameter: ll should be double'
+                    raise EZapiYelp.EZerror(mssg)        
+        if 'location' not in kwargs and 'bounds' not in kwargs and 'll' not in kwargs:
+            mssg = 'Yelp V2 api| required parameter: location/bounds/ll'
             raise EZapiYelp.EZerror(mssg)
+
+        if 'cll' in kwargs:
+            values = kwargs['cll'].split(',')
+            if len(values)!= 2:
+                mssg = 'Yelp V2 api| parameter: cll should contain a set of 2 items'
+                raise EZapiYelp.EZerror(mssg)
+            else:
+                try:
+                    latitude, longitude = float(values[0]), float(values[1])
+                except:
+                    mssg = 'Yelp V2 api| parameter: cll type should be double'
+                    raise EZapiYelp.EZerror(mssg)
+
         self.params_check(self.search_setting, **kwargs)
         return kwargs
 

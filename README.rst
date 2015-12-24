@@ -1,7 +1,7 @@
 ezapi\_yelp
 ===========
 
-|PyPI| |PyPI|
+|Build Status| |PyPI1| |PyPI2|
 
 An easy api for Yelp written in Python
 
@@ -34,15 +34,27 @@ Usage
     print test_api.search(location='calgary', limit=1)
     print test_api.business('yelp-san-francisco')
     print test_api.phone_search(phone='+14037275451')
+    print test_api.search(term='food',bounds='37.900000,-122.500000|37.788022,-122.399797')
+    print test_api.search(term='food',ll='37.900000,-122.500000')
+    print test_api.search(term='food',location='Hayes',cll='37.77493,-122.419415')
 
 Changelist
 ==========
+
+-  2015/12/24
+
+   -  "**search**" api
+
+      -  Complete
+      -  Search by "bounds" and "ll", with optional "cll" paramter
+      -  Parameter checking
 
 -  2015/12/21
 
    -  instantiate the EZapiYelp with *consumer key*, *consumer secret*,
       *access token*, and *access token secret*
-   -  Parameter type checking, raise error if there is a type mismatch
+   -  Parameter checking, raise error if there is a type mismatch or
+      missing required parameter
    -  "**search**" api
 
       -  80% Complete
@@ -63,10 +75,13 @@ Changelist
 TODO
 ====
 
--  complete "**search**" api's search by latitude, longitude
-   functionalities
+-  [STRIKEOUT:complete "**search**" api's search by latitude, longitude
+   functionalities]
+-  unit tests
 
-.. |PyPI| image:: https://img.shields.io/pypi/dm/ezapi-yelp.svg
+.. |Build Status| image:: https://travis-ci.org/zehengl/ezapi_yelp.svg?branch=master
+   :target: https://travis-ci.org/zehengl/ezapi_yelp
+.. |PyPI1| image:: https://img.shields.io/pypi/dm/ezapi-yelp.svg
    :target: https://pypi.python.org/pypi/ezapi-yelp
-.. |PyPI| image:: https://img.shields.io/pypi/v/ezapi_yelp.svg
+.. |PyPI2| image:: https://img.shields.io/pypi/v/ezapi_yelp.svg
    :target: https://pypi.python.org/pypi/ezapi-yelp

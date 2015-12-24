@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='ezapi_yelp',
 
-    version='0.1.0',
+    version='0.2.0',
 
     description='An easy api for Yelp written in Python',
     long_description=long_description,

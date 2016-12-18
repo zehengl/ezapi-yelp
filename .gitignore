@@ -1,4 +1,6 @@
-dist
+*.conf
 *.egg-info
+*.eggs
 *.pyc
 .DS_Store
+.idea

@@ -1,13 +1,31 @@
-ezapi\_yelp
-===========
+ezapi-yelp
+==========
 
-|Build Status| |PyPI1| |PyPI2|
+A Python wrapper for Yelp API, supporting
+`v2 <https://www.yelp.com/developers/documentation/v2/overview>`__ and
+`Fusion <https://www.yelp.com/developers/documentation/v3/get_started>`__
+(v3)
 
-An easy api for Yelp written in Python
+-  Implement all endpoints
 
-It implements the "**search**", "**business**", and "**phone\_search**"
-api provided by Yelp. For details, see
-https://www.yelp.com/developers/documentation/v2/overview
+   -  **v2**
+
+      -  Search
+      -  Business
+      -  PhoneSearch
+
+   -  **fusion** (v3)
+
+      -  Search
+      -  PhoneSearch
+      -  TransactionSearch
+      -  Business
+      -  Reviews
+      -  Autocomplete
+
+-  Validate all parameters
+-  Provide CLI
+-  Include unit tests
 
 Install
 =======
@@ -16,72 +34,144 @@ Install
 
     pip install ezapi_yelp
 
+Test
+====
+
+1. Clone down the repo
+
+   .. code:: bash
+
+       git clone git@github.com:zehengl/ezapi_yelp.git
+       cd ezapi_yelp
+
+2. Create a config file to store your credentials for testing
+
+   .. code:: bash
+
+       touch tests/credentials.conf
+
+3. Put down your api credentials as follows
+
+   ::
+
+       [v2]
+       consumer_key = xxxx
+       consumer_secret = xxxx
+       token = xxxx
+       token_secret = xxxx
+
+       [v3]
+       app_id = xxxx
+       app_secret = xxxx
+
+4. Run the tests
+
+   .. code:: bash
+
+       python setup.py test
+
 Usage
 =====
 
-.. code:: python
+1. **Python Library** To use the python library, please create a Yelp
+   instance with the required credentials.
 
-    from ezapi_yelp import EZapiYelp
+   All parameters are considered as *keyword arguments* (\*\*kwargs).
 
-    consumer_key        = 'YOUR consumer_key'
-    consumer_secret     = 'YOUR consumer_secret'
-    access_token        = 'YOUR access_token'
-    access_token_secret = 'YOUR access_token_secret'
+   For **v2** api:
 
-    test_api = EZapiYelp(consumer_key, consumer_secret, access_token, access_token_secret)
+   .. code:: python
 
-    # Simple examples
-    print test_api.search(location='calgary', limit=1)
-    print test_api.business('yelp-san-francisco')
-    print test_api.phone_search(phone='+14037275451')
-    print test_api.search(term='food',bounds='37.900000,-122.500000|37.788022,-122.399797')
-    print test_api.search(term='food',ll='37.900000,-122.500000')
-    print test_api.search(term='food',location='Hayes',cll='37.77493,-122.419415')
+       from yelp.api.v2 import Yelp
 
-Changelist
-==========
 
--  2015/12/24
+       consumer_key = 'xxxx'
+       consumer_secret = 'xxxx'
+       token = 'xxxx'
+       token_secret = 'xxxx'
 
-   -  "**search**" api
+       yelp = Yelp(
+           consumer_key, 
+           consumer_secret, 
+           token, 
+           token_secret,
+       )
 
-      -  Complete
-      -  Search by "bounds" and "ll", with optional "cll" paramter
-      -  Parameter checking
+       # Simple Examples
+       print yelp.search(location='calgary', limit=1)
+       print yelp.business('yelp-san-francisco')
+       print yelp.phone_search(phone='+14037275451')
+       print yelp.search(term='food',bounds='37.900000,-122.500000|37.788022,-122.399797')
+       print yelp.search(term='food',ll='37.900000,-122.500000')
+       print yelp.search(term='food',location='Hayes',cll='37.77493,-122.419415')
 
--  2015/12/21
+   For **fusion** (v3) api:
 
-   -  instantiate the EZapiYelp with *consumer key*, *consumer secret*,
-      *access token*, and *access token secret*
-   -  Parameter checking, raise error if there is a type mismatch or
-      missing required parameter
-   -  "**search**" api
+   .. code:: python
 
-      -  80% Complete
-      -  **location** is required for search operation, however, only
-         parameter "location" is implemented, "cll" (latitude,longitude)
-         is not done yet
+       from yelp.api.v3 import Yelp
 
-   -  "**business**" api
 
-      -  Complete
-      -  lookup business info by id, with optional parameters
+       app_id = 'xxxx'
+       app_secret = 'xxxx'
 
-   -  "**phone\_search**" api
+       yelp = Yelp(
+           app_id,
+           app_secret,
+       )
 
-      -  Complete
-      -  lookup business info by phone, with optional parameters
+       # Simple Examples
+       print yelp.search(location='calgary', limit=1)
+       print yelp.phone_search(phone='+14037275451')
+       print yelp.transaction_search('delivery', location='calgary')
+       print yelp.business('yelp-san-francisco')
+       print yelp.reviews('yelp-san-francisco')
+       print yelp.autocomplete(text='pizza', latitude=37.77493, longitude=-122.419415)
 
-TODO
-====
+2. **Command Line Interface** To use the CLI, please set up the api
+   credentials as environment variables or pass in as options.
 
--  [STRIKEOUT:complete "**search**" api's search by latitude, longitude
-   functionalities]
--  unit tests
+   All parameters are considered *options* (--PARAMETER=VALUE) in the
+   command line interface.
 
-.. |Build Status| image:: https://travis-ci.org/zehengl/ezapi_yelp.svg?branch=master
-   :target: https://travis-ci.org/zehengl/ezapi_yelp
-.. |PyPI1| image:: https://img.shields.io/pypi/dm/ezapi-yelp.svg
-   :target: https://pypi.python.org/pypi/ezapi-yelp
-.. |PyPI2| image:: https://img.shields.io/pypi/v/ezapi_yelp.svg
-   :target: https://pypi.python.org/pypi/ezapi-yelp
+   For **v2** api:
+
+   .. code:: bash
+
+       export consumer_key = xxxx
+       export consumer_secret = xxxx
+       export token = xxxx
+       export token_secret = xxxx
+
+       yelp2 business yelp-san-francisco
+       yelp2 phone_search --phone=+15555555555
+
+   or
+
+   .. code:: bash
+
+       yelp2 --consumer_key='xxxx' --consumer_secret='xxxx' --token='xxxx' --token_secret='xxxx' ENDPOINT --PARAMETER=yy
+
+   For **fusion** (v3) api:
+
+   .. code:: bash
+
+       export app_id = xxxx
+       export app_secret = xxxx
+
+       yelp-fusion search --location='san franciso' --limit=10 --indent=2
+       yelp-fusion business yelp-san-francisco
+       yelp-fusion autocomplete --latitude=37.77493 --longitude=-122.419415 -text='pizza'
+
+   or
+
+   .. code:: bash
+
+       yelp3 --app_id='xxxx' --app_secret='xxxx' ENDPOINT --PARAMETER=yy
+
+Contact
+=======
+
+Zeheng Li
+
+imzehengl@gmail.com

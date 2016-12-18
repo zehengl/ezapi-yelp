@@ -6,6 +6,7 @@ python:
   - "3.3"
   - "3.4"
 install:
-  - pip install requests_oauthlib
+  - pip install -r requirements.txt
+  - pip install .
 script:
-  - python setup.py sdist
+  - python setup.py test

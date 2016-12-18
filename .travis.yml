@@ -9,4 +9,13 @@ install:
   - pip install -r requirements.txt
   - pip install .
 script:
+  - touch tests/credentials.conf
+  - echo '[v2]' >> tests/credentials.conf
+  - echo consumer_key=$consumer_key >> tests/credentials.conf
+  - echo consumer_secret=$consumer_secret >> tests/credentials.conf
+  - echo token=$token >> tests/credentials.conf
+  - echo token_secret=$token_secret >> tests/credentials.conf
+  - echo '[v3]' >> tests/credentials.conf
+  - echo app_id=$app_id >> tests/credentials.conf
+  - echo app_secret=$app_secret >> tests/credentials.conf
   - python setup.py test

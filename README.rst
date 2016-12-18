@@ -6,6 +6,8 @@ A Python wrapper for Yelp API, supporting
 `Fusion <https://www.yelp.com/developers/documentation/v3/get_started>`__
 (v3)
 
+|Travis|\ |PyPI|
+
 -  Implement all endpoints
 
    -  **v2**
@@ -91,9 +93,9 @@ Usage
        token_secret = 'xxxx'
 
        yelp = Yelp(
-           consumer_key, 
-           consumer_secret, 
-           token, 
+           consumer_key,
+           consumer_secret,
+           token,
            token_secret,
        )
 
@@ -175,3 +177,8 @@ Contact
 Zeheng Li
 
 imzehengl@gmail.com
+
+.. |Travis| image:: https://img.shields.io/travis/zehengl/ezapi-yelp.svg
+   :target:
+.. |PyPI| image:: https://img.shields.io/pypi/v/ezapi-yelp.svg
+   :target:

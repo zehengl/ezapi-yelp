@@ -32,10 +32,12 @@ pip install ezapi_yelp
     git clone git@github.com:zehengl/ezapi_yelp.git
     cd ezapi_yelp
     ```
+    
 2. Create a config file to store your credentials for testing
     ```bash
     touch tests/credentials.conf
     ```
+    
 3. Put down your api credentials as follows
     ```
     [v2]
@@ -48,6 +50,7 @@ pip install ezapi_yelp
     app_id = xxxx
     app_secret = xxxx
     ```
+    
 4. Run the tests
     ```bash
     python setup.py test

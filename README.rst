@@ -179,6 +179,6 @@ Zeheng Li
 imzehengl@gmail.com
 
 .. |Travis| image:: https://img.shields.io/travis/zehengl/ezapi-yelp.svg
-   :target:
+   :target: https://travis-ci.org/zehengl/ezapi-yelp
 .. |PyPI| image:: https://img.shields.io/pypi/v/ezapi-yelp.svg
-   :target:
+   :target: https://pypi.python.org/pypi/ezapi-yelp

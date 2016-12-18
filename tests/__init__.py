@@ -1,4 +1,4 @@
-from ConfigParser import SafeConfigParser
+from configparser import ConfigParser
 from os import path
 
 
@@ -21,7 +21,7 @@ assert path.isfile(config_file), \
         app_secret = xxxx
     """
 
-config = SafeConfigParser()
+config = ConfigParser()
 config.read(config_file)
 
 assert config.get('v2', 'consumer_key'), 'missing v2 consumer_key'

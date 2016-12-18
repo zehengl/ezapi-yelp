@@ -2,6 +2,7 @@ import re
 
 from iso3166 import countries
 from iso639 import is_valid639_1, is_valid639_2
+from six import iteritems
 
 import yelp
 
@@ -63,7 +64,7 @@ def validate(parameter_validation, endpoint, **kwargs):
     if endpoint not in parameter_validation:
         raise yelp.exceptions.InvalidEndpoint
 
-    for k, v in kwargs.iteritems():
+    for (k, v) in iteritems(kwargs):
         _is_validate_func = parameter_validation.get(endpoint).get(k)
         if not _is_validate_func:
             raise yelp.exceptions.InvalidParameter(

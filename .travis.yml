@@ -5,6 +5,7 @@ python:
   - "3.4"
   - "3.5.2"
 install:
+  - pip install coveralls
   - pip install -r requirements.txt
   - pip install .
 script:
@@ -17,4 +18,6 @@ script:
   - echo '[v3]' >> tests/credentials.conf
   - echo app_id=$app_id >> tests/credentials.conf
   - echo app_secret=$app_secret >> tests/credentials.conf
-  - python setup.py test
+  - coverage run --source=yelp --omit="yelp/cli/*" setup.py test
+after_success:
+  - coveralls

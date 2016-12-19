@@ -3,7 +3,7 @@ ezapi-yelp
 
 A Python wrapper for Yelp API, supporting [v2](https://www.yelp.com/developers/documentation/v2/overview) and [Fusion](https://www.yelp.com/developers/documentation/v3/get_started) (v3)
 
-[![Travis](https://img.shields.io/travis/zehengl/ezapi-yelp.svg)](https://travis-ci.org/zehengl/ezapi-yelp)[![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
+[![Travis](https://img.shields.io/travis/zehengl/ezapi-yelp.svg)](https://travis-ci.org/zehengl/ezapi-yelp)[![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)[![Coveralls](https://img.shields.io/coveralls/zehengl/ezapi-yelp.svg)](https://coveralls.io/github/zehengl/ezapi-yelp)
 
 * Implement all endpoints
     - **v2**

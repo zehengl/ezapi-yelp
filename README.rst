@@ -6,7 +6,7 @@ A Python wrapper for Yelp API, supporting
 `Fusion <https://www.yelp.com/developers/documentation/v3/get_started>`__
 (v3)
 
-|Travis|\ |PyPI|
+|Travis|\ |PyPI|\ |Coveralls|
 
 -  Implement all endpoints
 
@@ -182,3 +182,5 @@ imzehengl@gmail.com
    :target: https://travis-ci.org/zehengl/ezapi-yelp
 .. |PyPI| image:: https://img.shields.io/pypi/v/ezapi-yelp.svg
    :target: https://pypi.python.org/pypi/ezapi-yelp
+.. |Coveralls| image:: https://img.shields.io/coveralls/zehengl/ezapi-yelp.svg
+   :target: https://coveralls.io/github/zehengl/ezapi-yelp

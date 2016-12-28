@@ -29,8 +29,8 @@ pip install ezapi_yelp
 # Test
 1. Clone down the repo
     ```bash
-    git clone git@github.com:zehengl/ezapi_yelp.git
-    cd ezapi_yelp
+    git clone git@github.com:zehengl/ezapi-yelp.git
+    cd ezapi-yelp
     ```
     
 2. Create a config file to store your credentials for testing

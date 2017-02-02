@@ -7,6 +7,7 @@ python:
 install:
   - pip install coveralls
   - pip install -r requirements.txt
+  - pip install codeclimate-test-reporter
   - pip install .
 script:
   - touch tests/credentials.conf
@@ -21,6 +22,4 @@ script:
   - coverage run --source=yelp --omit="yelp/cli/*" setup.py test
 after_success:
   - coveralls
-addons:
-    code_climate:
-        repo_token: 043362d19434cf494bff8082aee2c485a3f207b80be4fba881fd25323d321fb6
+  - codeclimate-test-reporter

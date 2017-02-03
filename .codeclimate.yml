@@ -1,6 +1,9 @@
 engines:
   duplication:
     enabled: true
+    config:
+      languages:
+      - python
     checks:
       Similar code:
         enabled: false

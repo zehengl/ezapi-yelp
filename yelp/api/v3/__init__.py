@@ -2,6 +2,7 @@ from oauthlib.oauth2 import BackendApplicationClient
 from requests_oauthlib import OAuth2Session
 
 import yelp.api
+from yelp import utils
 from yelp.exceptions import InvalidTransactionType
 
 
@@ -29,7 +30,7 @@ params_validation = {
         'longitude': lambda longitude: isinstance(longitude, float),
         'radius': lambda radius: isinstance(radius, int),
         'categories': lambda categories: isinstance(categories, str),
-        'locale': lambda locale: isinstance(locale, str) and yelp.api.utils.is_valid_locale(locale),
+        'locale': lambda locale: isinstance(locale, str) and utils.is_valid_locale(locale),
         'limit': lambda limit: isinstance(limit, int),
         'offset': lambda offset: isinstance(offset, int),
         'sort_by': lambda sort_by: isinstance(sort_by, str),
@@ -53,14 +54,14 @@ params_validation = {
     },
 
     Endpoints.Reviews: {
-        'locale': lambda locale: isinstance(locale, str) and yelp.api.utils.is_valid_locale(locale),
+        'locale': lambda locale: isinstance(locale, str) and utils.is_valid_locale(locale),
     },
 
     Endpoints.Autocomplete: {
         'text': lambda text: isinstance(text, str),
         'latitude': lambda latitude: isinstance(latitude, float),
         'longitude': lambda longitude: isinstance(longitude, float),
-        'locale': lambda locale: isinstance(locale, str) and yelp.api.utils.is_valid_locale(locale),
+        'locale': lambda locale: isinstance(locale, str) and utils.is_valid_locale(locale),
     },
 }
 
@@ -76,54 +77,54 @@ class Yelp:
 
     @staticmethod
     def _token_url():
-        return '%s%s' % (yelp.api.host, Endpoints.Token)
+        return utils.make_url(yelp.api.host, Endpoints.Token)
 
     @staticmethod
     def _search_url():
-        return '%s%s%s' % (yelp.api.host, base_path, Endpoints.Search)
+        return utils.make_url(yelp.api.host, base_path, Endpoints.Search)
 
     @staticmethod
     def _phone_search_url():
-        return '%s%s%s' % (yelp.api.host, base_path, Endpoints.PhoneSearch)
+        return utils.make_url(yelp.api.host, base_path, Endpoints.PhoneSearch)
 
     @staticmethod
     def _transaction_search_url(transaction_type):
         if transaction_type not in transaction_types:
             raise InvalidTransactionType(transaction_type)
-        return '%s%s%s' % (yelp.api.host, base_path, Endpoints.TransactionSearch % transaction_type)
+        return utils.make_url(yelp.api.host, base_path, Endpoints.TransactionSearch % transaction_type)
 
     @staticmethod
     def _business_url(business_id):
-        return '%s%s%s' % (yelp.api.host, base_path, Endpoints.Business % business_id)
+        return utils.make_url(yelp.api.host, base_path, Endpoints.Business % business_id)
 
     @staticmethod
     def _reviews_url(business_id):
-        return '%s%s%s' % (yelp.api.host, base_path, Endpoints.Reviews % business_id)
+        return utils.make_url(yelp.api.host, base_path, Endpoints.Reviews % business_id)
 
     @staticmethod
     def _autocomplete_url():
-        return '%s%s%s' % (yelp.api.host, base_path, Endpoints.Autocomplete)
+        return utils.make_url(yelp.api.host, base_path, Endpoints.Autocomplete)
 
     def search(self, **kwargs):
-        yelp.utils.validate(params_validation, Endpoints.Search, **kwargs)
+        utils.validate(params_validation, Endpoints.Search, **kwargs)
         return self.session.get(self._search_url(), params=kwargs).json()
 
     def phone_search(self, **kwargs):
-        yelp.utils.validate(params_validation, Endpoints.PhoneSearch, **kwargs)
+        utils.validate(params_validation, Endpoints.PhoneSearch, **kwargs)
         return self.session.get(self._phone_search_url(), params=kwargs).json()
 
     def transaction_search(self, transaction_type, **kwargs):
-        yelp.utils.validate(params_validation, Endpoints.TransactionSearch, **kwargs)
+        utils.validate(params_validation, Endpoints.TransactionSearch, **kwargs)
         return self.session.get(self._transaction_search_url(transaction_type), params=kwargs).json()
 
     def business(self, business_id, **kwargs):
-        yelp.utils.validate(params_validation, Endpoints.Business, **kwargs)
+        utils.validate(params_validation, Endpoints.Business, **kwargs)
         return self.session.get(self._business_url(business_id), params=kwargs).json()
 
     def reviews(self, business_id, **kwargs):
-        yelp.utils.validate(params_validation, Endpoints.Reviews, **kwargs)
+        utils.validate(params_validation, Endpoints.Reviews, **kwargs)
         return self.session.get(self._reviews_url(business_id), params=kwargs).json()
 
     def autocomplete(self, **kwargs):
-        yelp.utils.validate(params_validation, Endpoints.Autocomplete, **kwargs)
+        utils.validate(params_validation, Endpoints.Autocomplete, **kwargs)
         return self.session.get(self._autocomplete_url(), params=kwargs).json()

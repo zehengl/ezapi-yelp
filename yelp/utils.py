@@ -4,7 +4,7 @@ from iso3166 import countries
 from iso639 import is_valid639_1, is_valid639_2
 from six import iteritems
 
-import yelp
+from yelp.exceptions import InvalidEndpoint, InvalidParameter
 
 
 def is_valid_cc(cc):
@@ -62,15 +62,19 @@ def is_valid_bounds(bounds):
 
 def validate(parameter_validation, endpoint, **kwargs):
     if endpoint not in parameter_validation:
-        raise yelp.exceptions.InvalidEndpoint
+        raise InvalidEndpoint
 
     for (k, v) in iteritems(kwargs):
         _is_validate_func = parameter_validation.get(endpoint).get(k)
         if not _is_validate_func:
-            raise yelp.exceptions.InvalidParameter(
+            raise InvalidParameter(
                 '%s parameter is invalid' % k
             )
         if not _is_validate_func(v):
-            raise yelp.exceptions.InvalidParameter(
+            raise InvalidParameter(
                 '%s parameter has invalid value %s' % (k, str(v))
             )
+
+
+def make_url(*args):
+    return ''.join(args)

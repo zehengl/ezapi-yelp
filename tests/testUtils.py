@@ -117,3 +117,11 @@ class TestYelpUtils(unittest.TestCase):
         self.assertFalse(
             yelp.utils.is_valid_locale('en_xxx')
         )
+
+    def testMake_url(self):
+        self.assertTrue(
+            yelp.utils.make_url('a', 'b') == 'ab'
+        )
+        self.assertTrue(
+            yelp.utils.make_url('a', 'b', 'c') == 'abc'
+        )

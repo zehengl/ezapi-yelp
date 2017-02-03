@@ -86,7 +86,8 @@ def search(ctx,
         parameters['lang'] = str(lang)
     if actionlinks:
         parameters['actionlinks'] = actionlinks
-    print json.dumps(ctx.obj['yelp'].search(**parameters), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.search(**parameters), indent=indent)
 
 
 @yelp2.command()
@@ -108,7 +109,8 @@ def business(ctx,
         parameters['lang'] = str(lang)
     if actionlinks:
         parameters['actionlinks'] = actionlinks
-    print json.dumps(ctx.obj['yelp'].business(business_id, **parameters), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.business(business_id, **parameters), indent=indent)
 
 
 @yelp2.command()
@@ -128,7 +130,8 @@ def phone_search(ctx,
         parameters['cc'] = str(cc)
     if category:
         parameters['category'] = str(category)
-    print json.dumps(ctx.obj['yelp'].phone_search(**parameters), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.phone_search(**parameters), indent=indent)
 
 
 def run():

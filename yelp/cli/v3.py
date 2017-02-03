@@ -78,7 +78,8 @@ def search(ctx,
         parameters['open_at'] = open_at
     if attributes:
         parameters['attributes'] = str(attributes)
-    print json.dumps(ctx.obj['yelp'].search(**parameters), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.search(**parameters), indent=indent)
 
 
 @yelp_fusion.command()
@@ -89,7 +90,8 @@ def phone_search(ctx, phone, indent):
     parameters = {}
     if phone:
         parameters['phone'] = str(phone)
-    print json.dumps(ctx.obj['yelp'].phone_search(**parameters), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.phone_search(**parameters), indent=indent)
 
 
 @yelp_fusion.command()
@@ -111,7 +113,8 @@ def transaction_search(ctx,
         parameters['longitude'] = longitude
     if location:
         parameters['location'] = str(location)
-    print json.dumps(ctx.obj['yelp'].transaction_search(transaction_type, **parameters), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.transaction_search(transaction_type, **parameters), indent=indent)
 
 
 @yelp_fusion.command()
@@ -119,7 +122,8 @@ def transaction_search(ctx,
 @click.option('--indent', default=None, type=int)
 @click.pass_context
 def business(ctx, business_id, indent):
-    print json.dumps(ctx.obj['yelp'].business(business_id), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.business(business_id), indent=indent)
 
 
 @yelp_fusion.command()
@@ -131,7 +135,8 @@ def reviews(ctx, business_id, locale, indent):
     parameters = {}
     if locale:
         parameters['locale'] = str(locale)
-    print json.dumps(ctx.obj['yelp'].reviews(business_id), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.reviews(business_id), indent=indent)
 
 
 @yelp_fusion.command()
@@ -154,7 +159,8 @@ def autocomplete(ctx,
         parameters['longitude'] = longitude
     if locale:
         parameters['locale'] = str(locale)
-    print json.dumps(ctx.obj['yelp'].autocomplete(**parameters), indent=indent)
+    yelp_obj = ctx.obj['yelp']
+    print json.dumps(yelp_obj.autocomplete(**parameters), indent=indent)
 
 
 def run():

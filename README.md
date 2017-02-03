@@ -83,9 +83,9 @@ pip install ezapi_yelp
     print yelp.search(location='calgary', limit=1)
     print yelp.business('yelp-san-francisco')
     print yelp.phone_search(phone='+14037275451')
-    print yelp.search(term='food',bounds='37.900000,-122.500000|37.788022,-122.399797')
-    print yelp.search(term='food',ll='37.900000,-122.500000')
-    print yelp.search(term='food',location='Hayes',cll='37.77493,-122.419415')
+    print yelp.search(term='food', bounds='37.900000,-122.500000|37.788022,-122.399797')
+    print yelp.search(term='food', ll='37.900000,-122.500000')
+    print yelp.search(term='food', location='Hayes', cll='37.77493,-122.419415')
     
     ```
     
@@ -118,10 +118,10 @@ pip install ezapi_yelp
     
     For **v2** api:
     ```bash
-    export consumer_key = xxxx
-    export consumer_secret = xxxx
-    export token = xxxx
-    export token_secret = xxxx
+    export consumer_key=xxxx
+    export consumer_secret=xxxx
+    export token=xxxx
+    export token_secret=xxxx
     
     yelp2 business yelp-san-francisco
     yelp2 phone_search --phone=+15555555555
@@ -134,12 +134,12 @@ pip install ezapi_yelp
     
     For **fusion** (v3) api:
     ```bash
-    export app_id = xxxx
-    export app_secret = xxxx
+    export app_id=xxxx
+    export app_secret=xxxx
         
     yelp-fusion search --location='san franciso' --limit=10 --indent=2
     yelp-fusion business yelp-san-francisco
-    yelp-fusion autocomplete --latitude=37.77493 --longitude=-122.419415 -text='pizza'
+    yelp-fusion autocomplete --latitude=37.77493 --longitude=-122.419415 --text='pizza'
     ```
     
     or 

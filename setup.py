@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='ezapi_yelp',
     keywords='Yelp v2 v3 Fusion',
-    version='0.3.1',
+    version='0.3.2',
     packages=find_packages(exclude=['tests', 'tests.*']),
 
     description='A Python wrapper for Yelp API',

@@ -1,3 +1,4 @@
+from functools import wraps
 import re
 
 from iso3166 import countries
@@ -60,20 +61,29 @@ def is_valid_bounds(bounds):
     return True
 
 
-def validate(parameter_validation, endpoint, **kwargs):
-    if endpoint not in parameter_validation:
-        raise InvalidEndpoint
+def validate(parameter_validation, endpoint):
+    def _validate(parameter_validation, endpoint, **kwargs):
+        if endpoint not in parameter_validation:
+            raise InvalidEndpoint
 
-    for (k, v) in iteritems(kwargs):
-        _is_validate_func = parameter_validation.get(endpoint).get(k)
-        if not _is_validate_func:
-            raise InvalidParameter(
-                '%s parameter is invalid' % k
-            )
-        if not _is_validate_func(v):
-            raise InvalidParameter(
-                '%s parameter has invalid value %s' % (k, str(v))
-            )
+        for (k, v) in iteritems(kwargs):
+            _is_validate_func = parameter_validation.get(endpoint).get(k)
+            if not _is_validate_func:
+                raise InvalidParameter(
+                    '%s parameter is invalid' % k
+                )
+            if not _is_validate_func(v):
+                raise InvalidParameter(
+                    '%s parameter has invalid value %s' % (k, str(v))
+                )
+
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            _validate(parameter_validation, endpoint, **kwargs)
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
 
 
 def make_url(*args):

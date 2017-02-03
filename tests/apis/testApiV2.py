@@ -101,7 +101,7 @@ class TestYelpV2(unittest.TestCase):
         self.assertTrue(is_error(resp))
 
     def testBusinessFail(self):
-        resp = self.yelp_obj.business(business_id='')
+        resp = self.yelp_obj.business('')
         self.assertTrue(is_error(resp))
 
     def testPhoneSearchFail(self):

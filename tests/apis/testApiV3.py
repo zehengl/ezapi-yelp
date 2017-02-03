@@ -75,6 +75,10 @@ class TestYelpV3(unittest.TestCase):
         resp = self.yelp_obj.reviews(business_id)
         self.assertFalse(is_error(resp))
 
+    def testReviewsFail(self):
+        resp = self.yelp_obj.reviews('')
+        self.assertTrue(is_error(resp))
+
     def testAutocomplete_text(self):
         resp = self.yelp_obj.autocomplete(
             text='Delivery'

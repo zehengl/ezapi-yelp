@@ -70,14 +70,14 @@ class Yelp:
     def _phone_search_url():
         return utils.make_url(yelp.api.host, base_path, Endpoints.PhoneSearch)
 
+    @utils.validate(params_validation, Endpoints.Search)
     def search(self, **kwargs):
-        utils.validate(params_validation, Endpoints.Search, **kwargs)
         return self.session.get(self._search_url(), params=kwargs).json()
 
+    @utils.validate(params_validation, Endpoints.Business)
     def business(self, business_id, **kwargs):
-        utils.validate(params_validation, Endpoints.Business, **kwargs)
         return self.session.get(self._business_url(business_id), params=kwargs).json()
 
+    @utils.validate(params_validation, Endpoints.PhoneSearch)
     def phone_search(self, **kwargs):
-        utils.validate(params_validation, Endpoints.PhoneSearch, **kwargs)
         return self.session.get(self._phone_search_url(), params=kwargs).json()

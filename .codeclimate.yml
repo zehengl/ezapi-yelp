@@ -7,3 +7,11 @@ engines:
     checks:
       Similar code:
         enabled: false
+  radon:
+    enabled: true
+  pep8:
+    enabled: true
+
+ratings:
+  paths:
+    - "**.py"

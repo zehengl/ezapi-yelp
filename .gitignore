@@ -1,7 +1,5 @@
-*.conf
+__pycache__
+.eggs
+.pytest_cache
 *.egg-info
-*.eggs
-*.pyc
-.coverage
-.DS_Store
-.idea
+venv

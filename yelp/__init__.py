@@ -1,1 +1,1 @@
-from yelp import exceptions, utils, api
+from .fusion import YelpFusion

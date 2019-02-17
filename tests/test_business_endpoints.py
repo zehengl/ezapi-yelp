@@ -1,6 +1,6 @@
 import pytest
 
-from .testdata import loc_lat_long
+from .testdata import default_kwargs, loc_lat_long
 
 
 @pytest.mark.parametrize("kwargs, exception_raised", loc_lat_long)
@@ -50,7 +50,8 @@ def test_transaction_search(yelp_fusion, kwargs, exception_raised):
         assert yelp_fusion.transaction_search("delivery", **kwargs)
 
 
-def test_business_details(yelp_fusion):
+@pytest.mark.parametrize("kwargs", default_kwargs)
+def test_business_details(yelp_fusion, kwargs):
     """
     test GET /businesses/{id}
 
@@ -58,7 +59,7 @@ def test_business_details(yelp_fusion):
         yelp_fusion (yelp.YelpFusion): a YelpFusion object
     """
 
-    assert yelp_fusion.business_details("WavvLdfdP6g8aZTtbBQHTw")
+    assert yelp_fusion.business_details("WavvLdfdP6g8aZTtbBQHTw", **kwargs) is not None
 
 
 @pytest.mark.parametrize(
@@ -111,7 +112,8 @@ def test_business_match(yelp_fusion, kwargs, exception_raised):
         assert yelp_fusion.business_match(**kwargs) is not None
 
 
-def test_reviews(yelp_fusion):
+@pytest.mark.parametrize("kwargs", default_kwargs)
+def test_reviews(yelp_fusion, kwargs):
     """
     test GET /businesses/{id}/reviews
 
@@ -119,7 +121,7 @@ def test_reviews(yelp_fusion):
         yelp_fusion (yelp.YelpFusion): a YelpFusion object
     """
 
-    assert yelp_fusion.reviews("WavvLdfdP6g8aZTtbBQHTw")
+    assert yelp_fusion.reviews("WavvLdfdP6g8aZTtbBQHTw", **kwargs) is not None
 
 
 @pytest.mark.parametrize(

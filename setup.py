@@ -24,4 +24,11 @@ setup(
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
     test_suite="tests",
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.6",
+    ],
 )

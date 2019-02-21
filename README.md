@@ -3,8 +3,11 @@
 A Python wrapper for [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started),
 
 [![Travis](https://img.shields.io/travis/zehengl/ezapi-yelp.svg)](https://travis-ci.org/zehengl/ezapi-yelp)
-[![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+![PyPI - License](https://img.shields.io/pypi/l/ezapi-yelp.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ezapi-yelp.svg)
+[![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/zehengl/ezapi-yelp/0.4.1.svg)
 
 ## Install
 

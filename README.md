@@ -7,11 +7,11 @@ A Python wrapper for [Yelp Fusion API](https://www.yelp.com/developers/documenta
 ![PyPI - License](https://img.shields.io/pypi/l/ezapi-yelp.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ezapi-yelp.svg)
 [![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/zehengl/ezapi-yelp/0.4.1.svg)
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/zehengl/ezapi-yelp/0.4.2.svg)
 
 ## Install
 
-    pip install ezapi_yelp
+    pip install ezapi-yelp
 
 ## Test
 

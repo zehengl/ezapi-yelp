@@ -9,7 +9,7 @@ with open(path.join(here, "README.md")) as f:
 setup(
     name="ezapi_yelp",
     keywords="Yelp Fusion",
-    version="0.4.1",
+    version="0.4.2",
     packages=find_packages(),
     description="A Python wrapper for Yelp API",
     long_description=long_description,

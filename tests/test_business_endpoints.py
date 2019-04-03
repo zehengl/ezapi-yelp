@@ -1,8 +1,10 @@
 import pytest
 
+from . import polite
 from .testdata import default_kwargs, loc_lat_long
 
 
+@polite
 @pytest.mark.parametrize("kwargs, exception_raised", loc_lat_long)
 def test_business_search(yelp_fusion, kwargs, exception_raised):
     """
@@ -18,6 +20,7 @@ def test_business_search(yelp_fusion, kwargs, exception_raised):
         assert yelp_fusion.business_search(**kwargs) is not None
 
 
+@polite
 @pytest.mark.parametrize(
     "kwargs, exception_raised", [({}, True), ({"phone": "+14159083801"}, False)]
 )
@@ -35,6 +38,7 @@ def test_phone_search(yelp_fusion, kwargs, exception_raised):
         assert yelp_fusion.phone_search(**kwargs) is not None
 
 
+@polite
 @pytest.mark.parametrize("kwargs, exception_raised", loc_lat_long)
 def test_transaction_search(yelp_fusion, kwargs, exception_raised):
     """
@@ -50,6 +54,7 @@ def test_transaction_search(yelp_fusion, kwargs, exception_raised):
         assert yelp_fusion.transaction_search("delivery", **kwargs)
 
 
+@polite
 @pytest.mark.parametrize("kwargs", default_kwargs)
 def test_business_details(yelp_fusion, kwargs):
     """
@@ -62,6 +67,7 @@ def test_business_details(yelp_fusion, kwargs):
     assert yelp_fusion.business_details("WavvLdfdP6g8aZTtbBQHTw", **kwargs) is not None
 
 
+@polite
 @pytest.mark.parametrize(
     "kwargs, exception_raised",
     [
@@ -124,6 +130,7 @@ def test_reviews(yelp_fusion, kwargs):
     assert yelp_fusion.reviews("WavvLdfdP6g8aZTtbBQHTw", **kwargs) is not None
 
 
+@polite
 @pytest.mark.parametrize(
     "kwargs, exception_raised",
     [

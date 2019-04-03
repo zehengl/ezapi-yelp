@@ -1,8 +1,10 @@
 import pytest
 
+from . import polite
 from .testdata import default_kwargs
 
 
+@polite
 @pytest.mark.parametrize("kwargs", default_kwargs)
 def test_all_categories(yelp_fusion, kwargs):
     """
@@ -15,6 +17,7 @@ def test_all_categories(yelp_fusion, kwargs):
     assert yelp_fusion.all_categories(**kwargs) is not None
 
 
+@polite
 @pytest.mark.parametrize("kwargs", default_kwargs)
 def test_category_details(yelp_fusion, kwargs):
     """

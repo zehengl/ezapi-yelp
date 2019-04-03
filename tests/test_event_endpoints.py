@@ -1,8 +1,10 @@
 import pytest
 
+from . import polite
 from .testdata import default_kwargs, loc_lat_long
 
 
+@polite
 @pytest.mark.parametrize("kwargs", default_kwargs)
 def test_event_lookup(yelp_fusion, kwargs):
     """
@@ -18,6 +20,7 @@ def test_event_lookup(yelp_fusion, kwargs):
     )
 
 
+@polite
 @pytest.mark.parametrize("kwargs", default_kwargs)
 def test_event_search(yelp_fusion, kwargs):
     """
@@ -30,6 +33,7 @@ def test_event_search(yelp_fusion, kwargs):
     assert yelp_fusion.event_search(**kwargs) is not None
 
 
+@polite
 @pytest.mark.parametrize("kwargs, exception_raised", loc_lat_long)
 def test_featured_event(yelp_fusion, kwargs, exception_raised):
     """

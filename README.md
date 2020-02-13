@@ -22,7 +22,7 @@ A Python wrapper for [Yelp Fusion API](https://www.yelp.com/developers/documenta
     cd ezapi-yelp
     python setup.py test
 
-Use `$Env:token="..."` to set the api key envrionment variable on Windows.
+Use `$Env:token="..."` to set the api key environment variable on Windows.
 
 ## Usage
 

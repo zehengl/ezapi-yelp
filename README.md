@@ -1,3 +1,8 @@
+<div align="center">
+    <img src="https://cdn3.iconfinder.com/data/icons/data-sharing-and-cloud-lineal-style/512/apiprogrammingdevolperinterfaceappcomputer-512.png" alt="logo" height="196">
+    <img src="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_28-yelp-512.png" alt="yelp" height="128">
+</div>
+
 # ezapi-yelp
 
 [![Travis](https://img.shields.io/travis/zehengl/ezapi-yelp.svg)](https://travis-ci.org/zehengl/ezapi-yelp)
@@ -55,3 +60,20 @@ Use `$Env:token="..."` to set the api key environment variable on Windows.
     print(yelp_fusion.event_lookup("oakland-saucy-oakland-restaurant-pop-up"))
     print(yelp_fusion.event_search(location="Oakland"))
     print(yelp_fusion.featured_event(location="Oakland"))
+
+<hr>
+
+<sup>
+
+## Credits
+
+- [Icon][1] by [Photolio][2]
+
+- [Icon][3] by [tulpahn][4]
+
+</sup>
+
+[1]: https://www.iconfinder.com/icons/4904814/api_app_computer_devolper_interface_programming_icon
+[2]: https://www.iconfinder.com/Muhammad_Auns
+[3]: https://www.iconfinder.com/icons/4102600/applications_media_social_yelp_icon
+[4]: https://www.iconfinder.com/tulpahn

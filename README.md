@@ -12,7 +12,6 @@
 [![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
 [![Downloads](https://pepy.tech/badge/ezapi-yelp)](https://pepy.tech/project/ezapi-yelp)
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/zehengl/ezapi-yelp/0.4.2.svg)
-[![time tracker](https://wakatime.com/badge/github/zehengl/ezapi-yelp.svg)](https://wakatime.com/badge/github/zehengl/ezapi-yelp)
 
 A Python wrapper for [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)
 

@@ -5,7 +5,7 @@
 
 # ezapi-yelp
 
-![pytest](https://github.com/zehengl/ezapi-yelp/workflows/pytest/badge.svg)
+[![pytest](https://github.com/zehengl/ezapi-yelp/actions/workflows/pytest.yml/badge.svg)](https://github.com/zehengl/ezapi-yelp/actions/workflows/pytest.yml)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 ![PyPI - License](https://img.shields.io/pypi/l/ezapi-yelp.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ezapi-yelp.svg)
@@ -59,17 +59,11 @@ Use `$Env:token="..."` to set the api key environment variable on Windows.
     print(yelp_fusion.event_search(location="Oakland"))
     print(yelp_fusion.featured_event(location="Oakland"))
 
-<hr>
-
-<sup>
-
 ## Credits
 
 - [Icon][1] by [Photolio][2]
 
 - [Icon][3] by [tulpahn][4]
-
-</sup>
 
 [1]: https://www.iconfinder.com/icons/4904814/api_app_computer_devolper_interface_programming_icon
 [2]: https://www.iconfinder.com/Muhammad_Auns

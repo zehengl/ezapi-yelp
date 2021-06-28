@@ -29,35 +29,37 @@ Use `$Env:token="..."` to set the api key environment variable on Windows.
 
 ## Usage
 
-    from yelp import YelpFusion
+```python
+from yelp import YelpFusion
 
-    token = "..."
+token = "..."
 
-    yelp_fusion = YelpFusion(token)
+yelp_fusion = YelpFusion(token)
 
-    print(yelp_fusion.business_search(location="San Francisco"))
-    print(yelp_fusion.transaction_search("delivery", location="San Francisco"))
-    print(yelp_fusion.business_details("WavvLdfdP6g8aZTtbBQHTw"))
-    print(
-        yelp_fusion.business_match(
-            name="Gary Danko",
-            address1="800 N Point St",
-            city="San Francisco",
-            state="CA",
-            country="US",
-        )
+print(yelp_fusion.business_search(location="San Francisco"))
+print(yelp_fusion.transaction_search("delivery", location="San Francisco"))
+print(yelp_fusion.business_details("WavvLdfdP6g8aZTtbBQHTw"))
+print(
+    yelp_fusion.business_match(
+        name="Gary Danko",
+        address1="800 N Point St",
+        city="San Francisco",
+        state="CA",
+        country="US",
     )
-    print(yelp_fusion.reviews("WavvLdfdP6g8aZTtbBQHTw"))
-    print(
-        yelp_fusion.autocomplete(
-            text="Gary Danko", latitude=37.80587, longitude=-122.42058
-        )
+)
+print(yelp_fusion.reviews("WavvLdfdP6g8aZTtbBQHTw"))
+print(
+    yelp_fusion.autocomplete(
+        text="Gary Danko", latitude=37.80587, longitude=-122.42058
     )
-    print(yelp_fusion.all_categories())
-    print(yelp_fusion.category_details("hotdogs"))
-    print(yelp_fusion.event_lookup("oakland-saucy-oakland-restaurant-pop-up"))
-    print(yelp_fusion.event_search(location="Oakland"))
-    print(yelp_fusion.featured_event(location="Oakland"))
+)
+print(yelp_fusion.all_categories())
+print(yelp_fusion.category_details("hotdogs"))
+print(yelp_fusion.event_lookup("oakland-saucy-oakland-restaurant-pop-up"))
+print(yelp_fusion.event_search(location="Oakland"))
+print(yelp_fusion.featured_event(location="Oakland"))
+```
 
 ## Credits
 

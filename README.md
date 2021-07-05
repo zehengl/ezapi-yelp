@@ -16,16 +16,13 @@ A Python wrapper for [Yelp Fusion API](https://www.yelp.com/developers/documenta
 
 ## Install
 
+From [PyPi](https://pypi.org/project/ezapi-yelp/)
+
     pip install ezapi-yelp
 
-## Test
+From [GitHub](https://github.com/zehengl/ezapi-yelp)
 
-    git clone git@github.com:zehengl/ezapi-yelp.git
-    export token="..."
-    cd ezapi-yelp
-    python setup.py test
-
-Use `$Env:token="..."` to set the api key environment variable on Windows.
+    pip install git+https://github.com/zehengl/ezapi-yelp.git
 
 ## Usage
 
@@ -60,6 +57,15 @@ print(yelp_fusion.event_lookup("oakland-saucy-oakland-restaurant-pop-up"))
 print(yelp_fusion.event_search(location="Oakland"))
 print(yelp_fusion.featured_event(location="Oakland"))
 ```
+
+## Test
+
+    git clone git@github.com:zehengl/ezapi-yelp.git
+    export token="..."
+    cd ezapi-yelp
+    python setup.py test
+
+Use `$Env:token="..."` to set the api key environment variable on Windows.
 
 ## Credits
 

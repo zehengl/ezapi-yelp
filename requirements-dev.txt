@@ -2,7 +2,7 @@
 black==22.1.0
 pip-check-updates==0.8.2
 pylint==2.12.2
-pytest==7.0.0
+pytest==7.0.1
 setuptools==60.8.2
 tox==3.24.5
 twine==3.8.0

@@ -25,7 +25,7 @@ setup(
     license="MIT",
     install_requires=requirements,
     setup_requires=["pytest-runner"],
-    tests_require=["pytest"],
+    tests_require=["pytest", "python-dotenv"],
     test_suite="tests",
     classifiers=[
         "Development Status :: 3 - Alpha",

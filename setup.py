@@ -12,7 +12,7 @@ with open(path.join(here, "requirements.txt")) as f:
 setup(
     name="ezapi_yelp",
     keywords="Yelp Fusion",
-    version="0.4.5",
+    version="0.4.6",
     packages=find_packages(),
     description="A Python wrapper for Yelp API",
     long_description=long_description,

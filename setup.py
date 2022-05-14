@@ -1,5 +1,5 @@
 from os import path
-from setuptools import setup, find_packages
+from setuptools import setup
 
 here = path.abspath(path.dirname(__file__))
 
@@ -13,7 +13,7 @@ setup(
     name="ezapi_yelp",
     keywords="Yelp Fusion",
     version="0.4.6",
-    packages=find_packages(),
+    packages=["yelp"],
     description="A Python wrapper for Yelp API",
     long_description=long_description,
     long_description_content_type="text/markdown",

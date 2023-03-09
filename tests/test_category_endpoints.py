@@ -1,7 +1,7 @@
 import pytest
 
-from . import polite
-from .testdata import default_kwargs
+from data import default_kwargs
+from utils import polite
 
 
 @polite

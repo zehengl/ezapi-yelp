@@ -1,0 +1,41 @@
+[project]
+name = "ezapi-yelp"
+dynamic = ["version", "dependencies"]
+authors = [{ name = "Zeheng Li", email = "imzehengl@gmail.com" }]
+maintainers = [{ name = "Zeheng Li", email = "imzehengl@gmail.com" }]
+description = "A Python wrapper for Yelp API"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["Yelp Fusion"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
+[project.urls]
+repository = "https://github.com/zehengl/ezapi-yelp"
+homepage = "https://zehengl.github.io/ezapi-yelp/"
+
+
+[tool.setuptools_scm]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = ["--import-mode=importlib"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+
+[build-system]
+requires = ["setuptools>=67.0", "setuptools_scm>=7.1.0"]
+build-backend = "setuptools.build_meta"

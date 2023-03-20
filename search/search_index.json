@@ -1,0 +1,1 @@
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Home","text":""},{"location":"#ezapi-yelp","title":"ezapi-yelp","text":"<p>A Python wrapper for Yelp Fusion API</p>"}]}

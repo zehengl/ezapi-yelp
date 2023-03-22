@@ -12,6 +12,6 @@ load_dotenv()
 
 @pytest.fixture(scope="module")
 def yelp_fusion():
-    token = os.getenv("token", None)
+    token = os.getenv("yelp_token", None)
 
     return YelpFusion(token) if token else None

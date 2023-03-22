@@ -27,4 +27,4 @@ jobs:
           pip install -e .
           pytest
         env:
-          token: ${{ secrets.TOKEN }}
+          yelp_token: ${{ secrets.YELP_TOKEN }}

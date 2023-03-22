@@ -1,5 +1,4 @@
 <div align="center">
-    <img src="https://cdn3.iconfinder.com/data/icons/data-sharing-and-cloud-lineal-style/512/apiprogrammingdevolperinterfaceappcomputer-512.png" alt="logo" height="196">
     <img src="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_28-yelp-512.png" alt="yelp" height="96">
 </div>
 
@@ -60,20 +59,22 @@ print(yelp_fusion.featured_event(location="Oakland"))
 
 ## Test
 
-    git clone git@github.com:zehengl/ezapi-yelp.git
-    export token="..."
-    cd ezapi-yelp
-    python setup.py test
+```bash
+git clone git@github.com:zehengl/ezapi-yelp.git
+cd ezapi-yelp
+export token="..."
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+pip install -r requirements-test.txt
+pytest
+```
 
 Use `$Env:token="..."` to set the api key environment variable on Windows.
 
 ## Credits
 
-- [Icon][1] by [Photolio][2]
+- [Icon][1] by [tulpahn][2]
 
-- [Icon][3] by [tulpahn][4]
-
-[1]: https://www.iconfinder.com/icons/4904814/api_app_computer_devolper_interface_programming_icon
-[2]: https://www.iconfinder.com/Muhammad_Auns
-[3]: https://www.iconfinder.com/icons/4102600/applications_media_social_yelp_icon
-[4]: https://www.iconfinder.com/tulpahn
+[1]: https://www.iconfinder.com/icons/4102600/applications_media_social_yelp_icon
+[2]: https://www.iconfinder.com/tulpahn

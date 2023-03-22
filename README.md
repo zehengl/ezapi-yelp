@@ -62,7 +62,7 @@ print(yelp_fusion.featured_event(location="Oakland"))
 ```bash
 git clone git@github.com:zehengl/ezapi-yelp.git
 cd ezapi-yelp
-export token="..."
+export yelp_token="..."
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
@@ -70,7 +70,7 @@ pip install -r requirements-test.txt
 pytest
 ```
 
-Use `$Env:token="..."` to set the api key environment variable on Windows.
+Use `$Env:yelp_token="..."` to set the api key environment variable on Windows.
 
 ## Credits
 

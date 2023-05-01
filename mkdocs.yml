@@ -23,7 +23,7 @@ theme:
   features:
     - header.autohide
     - content.code.copy
-repo_name: zehengl/ezapi-yelp
+repo_name: ezapi-yelp
 repo_url: https://github.com/zehengl/ezapi-yelp
 plugins:
   - search

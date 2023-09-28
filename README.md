@@ -11,7 +11,7 @@
 [![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
 [![Downloads](https://static.pepy.tech/badge/ezapi-yelp)](https://pepy.tech/project/ezapi-yelp)
 
-A Python wrapper for [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)
+A Python wrapper for [Yelp Fusion API](https://docs.developer.yelp.com/docs/fusion-intro)
 
 ## Install
 

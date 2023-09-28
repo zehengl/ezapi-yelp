@@ -4,4 +4,4 @@
 
 # ezapi-yelp
 
-A Python wrapper for [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)
+A Python wrapper for [Yelp Fusion API](https://docs.developer.yelp.com/docs/fusion-intro)

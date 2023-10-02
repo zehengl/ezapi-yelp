@@ -10,6 +10,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ezapi-yelp.svg)
 [![PyPI](https://img.shields.io/pypi/v/ezapi-yelp.svg)](https://pypi.python.org/pypi/ezapi-yelp)
 [![Downloads](https://static.pepy.tech/badge/ezapi-yelp)](https://pepy.tech/project/ezapi-yelp)
+[![GitHub Pages](https://github.com/zehengl/ezapi-yelp/actions/workflows/gh-deploy.yml/badge.svg)](https://github.com/zehengl/ezapi-yelp/actions/workflows/gh-deploy.yml)
 
 A Python wrapper for [Yelp Fusion API](https://docs.developer.yelp.com/docs/fusion-intro)
 

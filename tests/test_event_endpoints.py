@@ -1,5 +1,4 @@
 import pytest
-
 from data import default_kwargs, loc_lat_long
 from utils import polite
 

@@ -1,5 +1,4 @@
 import pytest
-
 from data import default_kwargs
 from utils import polite
 

@@ -1,2 +1,2 @@
 pytest==8.0.0
-python-dotenv
+python-dotenv==1.0.1

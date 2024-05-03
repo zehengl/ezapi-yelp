@@ -8,6 +8,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 ![PyPI - License](https://img.shields.io/pypi/l/ezapi-yelp.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ezapi-yelp.svg)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/ezapi-yelp)
 [![Downloads](https://static.pepy.tech/badge/ezapi-yelp)](https://pepy.tech/project/ezapi-yelp)
 [![GitHub Pages](https://github.com/zehengl/ezapi-yelp/actions/workflows/gh-deploy.yml/badge.svg)](https://github.com/zehengl/ezapi-yelp/actions/workflows/gh-deploy.yml)
 

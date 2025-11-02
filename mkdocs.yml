@@ -4,8 +4,8 @@ nav:
   - Home: index.md
 theme:
   name: material
-  favicon: https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_28-yelp-512.png
-  logo: https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_28-yelp-512.png
+  favicon: https://raw.githubusercontent.com/zehengl/ezapi-yelp/refs/heads/main/logo.png
+  logo: https://raw.githubusercontent.com/zehengl/ezapi-yelp/refs/heads/main/logo.png
   font:
     text: Roboto
   palette:

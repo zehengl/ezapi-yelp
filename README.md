@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_28-yelp-512.png" alt="yelp" height="96">
+    <img src="https://raw.githubusercontent.com/zehengl/ezapi-yelp/refs/heads/main/logo.png" alt="yelp" height="96">
 </div>
 
 # ezapi-yelp
@@ -72,10 +72,3 @@ pytest
 ```
 
 Use `$Env:yelp_token="..."` to set the api key environment variable on Windows.
-
-## Credits
-
-- [Icon][1] by [tulpahn][2]
-
-[1]: https://www.iconfinder.com/icons/4102600/applications_media_social_yelp_icon
-[2]: https://www.iconfinder.com/tulpahn

@@ -3,7 +3,7 @@ __pycache__
 .env
 .pytest_cache
 .venv
-.tox
 *.egg-info
 build
 dist
+site
